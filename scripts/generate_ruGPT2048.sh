@@ -26,7 +26,7 @@ gpt_options=" \
        --top_k 10\
 "
 
-run_cmd="mpirun --np ${NUM_GPUS_PER_WORKER} python generate_samples.py $@ ${gpt_options}"
+run_cmd="mpirun --allow-run-as-root --np ${NUM_GPUS_PER_WORKER} python generate_samples.py $@ ${gpt_options}"
 echo "${run_cmd}"
 eval "${run_cmd}"
 
